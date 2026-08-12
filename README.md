@@ -10,6 +10,14 @@ PySpark, without raw data ever entering the model's context. Only
 metadata, bounded query results, and summarized outputs are ever returned
 to the LLM; every operation is logged locally for auditability.
 
+## Registry & Certification
+
+[![Glama MCP Server](https://glama.ai/mcp/servers/MostafaAI10/OmniData-MCP/badge)](https://glama.ai/mcp/servers/MostafaAI10/OmniData-MCP)
+
+*OmniData MCP is officially published and indexed on the [Glama MCP Registry](https://glama.ai/mcp/servers/MostafaAI10/OmniData-MCP), enabling seamless discovery and integration across supported LLM desktop environments.*
+
+---
+
 ## Status: all planned phases complete
 
 | Phase | Scope | Tools added |
