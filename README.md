@@ -1,6 +1,6 @@
 # OmniData MCP
 
-![image alt](https://github.com/MostafaAI10/Correspa-AI/blob/b266dd8265dd56fd6e6c355125fbc2cb6e41114b/Banner.png)
+![image alt](https://github.com/MostafaAI10/OmniData-MCP/blob/750464122b76be8105a0e212e124aa1fd6ff4a50/MCP-Banner.png)
 
 ---
 
