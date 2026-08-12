@@ -2,7 +2,7 @@
 
 All notable changes to OmniData MCP are documented here, phase by phase.
 
-## Phase 4 -- Hardening & polish
+## Phase 4: Hardening & polish
 
 - **Audit logging**: every tool call is now logged as a JSON line to
   `data/audit.log` (tool name, argument summary, duration, outcome).
@@ -20,7 +20,7 @@ All notable changes to OmniData MCP are documented here, phase by phase.
   model, architecture reconciliation (see below), troubleshooting
   appendix consolidating real issues hit during development.
 
-## Phase 3 -- PySpark server
+## Phase 3: PySpark server
 
 - Added `execute_pyspark_job`: declarative transformation pipelines
   (filter / select / withColumn / groupBy_agg / orderBy / distinct /
@@ -38,7 +38,7 @@ All notable changes to OmniData MCP are documented here, phase by phase.
   cancellation, documented honestly rather than presented as a
   stronger guarantee than it is.
 
-## Phase 2 -- Visualization
+## Phase 2: Visualization
 
 - Added `generate_chart`: bar/line/scatter charts (with optional
   multi-series grouping) rendered via Plotly, from any read-only
@@ -50,7 +50,7 @@ All notable changes to OmniData MCP are documented here, phase by phase.
   reliable path, since Claude Desktop does not currently render inline
   images from locally-installed unpacked extensions.
 
-## Phase 1 -- DuckDB tools
+## Phase 1: DuckDB tools
 
 - Added `list_datasets`, `get_schema`, `get_row_count`,
   `run_sql_query`, `get_data_profile`.
