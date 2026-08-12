@@ -2,8 +2,6 @@
 
 ![image alt](https://github.com/MostafaAI10/OmniData-MCP/blob/750464122b76be8105a0e212e124aa1fd6ff4a50/MCP-Banner.png)
 
----
-
 **A unified Model Context Protocol server for intelligent data engineering & analytics.**
 
 OmniData MCP lets LLM clients (Claude Desktop, Cursor, or any MCP-compatible
