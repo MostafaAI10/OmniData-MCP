@@ -4,7 +4,7 @@
 
 OmniData MCP lets LLM clients (Claude Desktop, Cursor, or any MCP-compatible
 client) query, profile, transform, and visualize data using DuckDB and
-PySpark -- without raw data ever entering the model's context. Only
+PySpark, without raw data ever entering the model's context. Only
 metadata, bounded query results, and summarized outputs are ever returned
 to the LLM; every operation is logged locally for auditability.
 
