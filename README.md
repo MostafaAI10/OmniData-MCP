@@ -18,7 +18,7 @@ to the LLM; every operation is logged locally for auditability.
 | 1 | DuckDB query/profiling engine | `list_datasets`, `get_schema`, `get_row_count`, `run_sql_query`, `get_data_profile` |
 | 2 | Visualization | `generate_chart` |
 | 3 | PySpark transformation engine | `execute_pyspark_job` |
-| 4 | Hardening: audit logging, consistent error handling, docs | -- |
+| 4 | Hardening: audit logging, consistent error handling, docs | DONE |
 
 See `CHANGELOG.md` for what changed in each phase, including two real
 bugs found and fixed during development (an unhandled-exception error
