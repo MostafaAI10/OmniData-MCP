@@ -1,5 +1,5 @@
 """
-PySpark session management for the OmniData MCP server (Phase 3).
+PySpark session management for the OmniData MCP server.
 
 Two things matter more here than in the DuckDB server:
 
