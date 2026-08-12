@@ -1,5 +1,7 @@
 # OmniData MCP
 
+---
+
 **A unified Model Context Protocol server for intelligent data engineering & analytics.**
 
 OmniData MCP lets LLM clients (Claude Desktop, Cursor, or any MCP-compatible
