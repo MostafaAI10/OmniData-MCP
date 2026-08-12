@@ -1,0 +1,36 @@
+[project]
+name = "omnidata-mcp"
+version = "1.0.0"
+description = "A unified Model Context Protocol suite for intelligent data engineering & analytics -- lets LLMs query, profile, and transform big data via PySpark and SQL engines without raw data ever entering the model's context."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=2.0.0",
+    "pydantic-settings>=2.6.0",
+    "python-dotenv>=1.0.1",
+    "duckdb>=1.1.0",
+    "plotly>=5.24.0",
+    "kaleido==0.2.1",
+    "pyspark>=3.5.0",
+]
+
+[project.optional-dependencies]
+viz-extra = [
+    "seaborn>=0.13.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.7.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+omnidata-db-server = "omnidata_mcp.db_server:main"

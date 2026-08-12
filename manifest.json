@@ -1,0 +1,20 @@
+{
+  "manifest_version": "0.2",
+  "name": "omnidata-db",
+  "version": "1.0.0",
+  "description": "OmniData MCP -- DuckDB tools for querying, profiling, and analyzing local data without raw rows ever leaving your machine.",
+  "author": {
+    "name": "Mostafa"
+  },
+  "server": {
+    "type": "binary",
+    "entry_point": "D:\\devtools\\uv\\uv.exe",
+    "mcp_config": {
+      "command": "D:\\devtools\\uv\\uv.exe",
+      "args": ["run", "--directory", "D:\\projects\\omnidata-mcp", "omnidata-db-server"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["win32"]
+  }
+}
