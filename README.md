@@ -64,45 +64,31 @@ confirm the connection.
 
 ## Architecture
 
-The original design called for two separate MCP servers -- a
-lightweight Database server and a heavier PySpark & Analytics server
--- communicating with the client independently:
+The original design called for two separate MCP servers -- a lightweight Database server and a heavier PySpark & Analytics server -- communicating with the client independently:
 
-```
- LLM Client (Claude Desktop / Cursor / custom)
-                  |
-           (MCP Protocol, stdio)
-                  |
-    +-------------+-------------+
-    v                           v
-Database MCP Server     PySpark & Analytics Server
-(DuckDB / PostgreSQL)   (PySpark session / Plotly)
+```mermaid
+graph TD
+    Client["LLM Client<br/>(Claude Desktop / Cursor / custom)"]
+    Client -->|MCP Protocol, stdio| DB["Database MCP Server<br/>(DuckDB / PostgreSQL)"]
+    Client -->|MCP Protocol, stdio| Spark["PySpark & Analytics Server<br/>(PySpark session / Plotly)"]
 ```
 
-**As built, this was deliberately consolidated into one server**
-(`db_server.py`, one process, one `manifest.json`, one Claude Desktop
-extension) rather than split in two:
+**As built, this was deliberately consolidated into one server** (`db_server.py`, one process, one `manifest.json`, one Claude Desktop extension) rather than split in two:
 
-```
- LLM Client (Claude Desktop / Cursor / custom)
-                  |
-           (MCP Protocol, stdio)
-                  |
-         OmniData MCP Server
-    (DuckDB engine + PySpark engine +
-     Plotly charts, one process)
+```mermaid
+graph TD
+    Client["LLM Client<br/>(Claude Desktop / Cursor / custom)"]
+    Client -->|MCP Protocol, stdio| Server["OmniData MCP Server"]
+
+    subgraph Server["OmniData MCP Server (one process)"]
+        direction TB
+        DuckModule["DuckDB engine<br/>connection.py / query_safety.py"]
+        SparkModule["PySpark engine<br/>spark_session.py / spark_pipeline.py"]
+        ChartModule["Plotly charts<br/>charts.py"]
+    end
 ```
 
-Rationale: for a single-user local tool, one process means one
-install/uninstall cycle in Claude Desktop, one shared config and audit
-log, and no need to coordinate two lifecycles for what's still a small
-number of tools (8). The internal module boundaries
-(`connection.py`/`query_safety.py` for DuckDB,
-`spark_session.py`/`spark_pipeline.py` for Spark, `charts.py` for
-visualization) still mirror the original two-server split logically --
-splitting back into separate processes later, if concurrency or
-multi-user needs justify it, would mean moving files, not rewriting
-them.
+Rationale: for a single-user local tool, one process means one install/uninstall cycle in Claude Desktop, one shared config and audit log, and no need to coordinate two lifecycles for what's still a small number of tools (8). The internal module boundaries (`connection.py`/`query_safety.py` for DuckDB, `spark_session.py`/`spark_pipeline.py` for Spark, `charts.py` for visualization) still mirror the original two-server split logically -- splitting back into separate processes later, if concurrency or multi-user needs justify it, would mean moving files, not rewriting them.
 
 ## Tool reference
 
