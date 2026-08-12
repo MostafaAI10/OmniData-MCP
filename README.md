@@ -261,4 +261,10 @@ installers that can't be redirected at all.
 
 ## License
 
-MIT -- see `LICENSE`.
+This project is licensed under the **MIT License**.
+
+---
+
+## Author
+ **MOSTAFA ABDELHAMED** | Junior AI & DS Researcher | NVIDIA Gen AI Certified
+ [LinkedIn](https://www.linkedin.com/in/mostafa-abdelhamed-88a447286)
